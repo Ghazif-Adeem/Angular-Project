@@ -1,0 +1,21 @@
+<body>
+  <div class="fluid-container">
+  <div class="login-page">
+    <div class="form">
+      <form id="login" class="login-form" [formGroup]="myForm">
+        <input formControlName="email"  type="email" placeholder="email" maxlength="30" #usr/>
+        <div *ngIf="email.invalid && email.touched">
+          Your email doesn't look right
+        </div>
+        <input formControlName="password" type="password" placeholder="password" maxlength="20" #pwd/>
+        <div *ngIf="password.invalid && password.touched">
+          Your password doesn't look right
+        </div>
+        <button (click)="validate(usr, pwd)">login</button>
+        <p class="message">Not registered? <a routerLink="../join">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+  </div>
+  <footer class="text-center bg-dark text-danger font-italic"> &copy; 2019 Sandman All Rights Reserved </footer>
+  </body>

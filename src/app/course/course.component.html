@@ -1,0 +1,98 @@
+<div class="container">
+  <h2>Available Courses</h2>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne" (click)="getASPInfo()">
+          Course #1
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <h6> Course Details </h6>
+          <div *ngIf="!ASPresult">
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div>
+          </div>
+          <div *ngIf="ASPresult">
+            <ul>
+              <li>Course ID:  {{ ASPresult.courseCode }} </li>
+              <li>Course Title: {{ ASPresult.courseTitle | uppercase }} </li>
+              <li>Course Duration: {{ ASPresult.courseHours }} </li>
+              <li>Course Instructor: {{ ASPresult.courseInstructor }} </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" (click)="getPHPinfo()">
+        Course #2
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <h6> Course Details </h6>
+          <div *ngIf="!PHPresult">
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div>
+          </div>
+          <div *ngIf="PHPresult">
+            <ul>
+              <li>Course ID:  {{ PHPresult.courseCode }} </li>
+              <li>Course Title: {{ PHPresult.courseTitle | uppercase }} </li>
+              <li>Course Duration: {{ PHPresult.courseHours }} </li>
+              <li>Course Instructor: {{ PHPresult.courseInstructor }} </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree" (click)="getWebInfo()">
+          Course #3
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <h6> Course Details </h6>
+          <div *ngIf="!Webresult">
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div>
+          </div>
+          <div *ngIf="Webresult">
+            <ul>
+              <li>Course ID:  {{ Webresult.courseCode }} </li>
+              <li>Course Title: {{ Webresult.courseTitle | uppercase }} </li>
+              <li>Course Duration: {{ Webresult.courseHours }} </li>
+              <li>Course Instructor: {{ Webresult.courseInstructor }} </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

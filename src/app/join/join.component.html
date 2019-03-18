@@ -1,0 +1,30 @@
+<body style="background-color: #76b852;">
+  <div class="fluid-container">
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form" [formGroup]="myForm">
+        <input formControlName="user" maxlength="20"  type="text" placeholder="username" #usr/>
+        <div *ngIf="user.invalid && user.touched">
+          username is invalid
+        </div>
+        <input formControlName="email" type="email" placeholder="email" #emailAddr/>
+        <div *ngIf="email.invalid && email.touched">
+          email is invalid
+        </div>
+        <input formControlName="password" type="password" placeholder="password" #pwd/>
+        <div *ngIf="password.invalid && password.touched">
+          password is invalid
+        </div>
+        <input type="checkbox" style="width: 12px" formControlName="agree"> I agree with terms and conditions
+        <button (click)="create()" [disabled]="myForm.invalid">create</button>
+        <hr>
+        <div *ngIf="valid">
+          {{ valid }}
+        </div>
+        <p class="message">Already registered? <a routerLink="../login">Sign In</a></p>
+      </form>
+    </div>
+  </div>
+  </div>
+  <footer class="text-center bg-dark text-danger "> &copy; 2019 Sandman All Rights Reserved </footer>
+  </body>
